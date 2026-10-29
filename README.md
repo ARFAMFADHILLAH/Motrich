@@ -1,17 +1,32 @@
-# motrich
+# Motrich - Personal Money Tracker
 
-A new Flutter project.
+Motrich adalah aplikasi manajemen keuangan pribadi (pencatat uang masuk & keluar) berbasis Flutter untuk Android, iOS, dan Web.
 
-## Getting Started
+## 🚀 Fitur Utama
+- **Dashboard Interaktif**: Ringkasan saldo total, total pemasukan, dan total pengeluaran secara real-time.
+- **Manajemen Transaksi**: Tambah, ubah, dan hapus transaksi (pemasukan/pengeluaran) lengkap dengan kategori (Makanan, Transport, Belanja, Gaji, dll).
+- **Penyimpanan Lokal**: Data tersimpan aman di perangkat menggunakan `shared_preferences`.
+- **Cross-Platform**: Dirancang untuk berjalan mulus di Mobile (Android/iOS) dan Web.
 
-This project is a starting point for a Flutter application.
+## 📱 Tech Stack
+- **Framework**: Flutter (Dart)
+- **State Management**: Stateful / Provider
+- **Storage**: Shared Preferences
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Cara Menjalankan Project
+1. Clone repository ini:
+   ```bash
+   git clone https://github.com/username/motrich.git
+   cd motrich
+   ```
+2. Ambil dependencies:
+   ```bash
+   flutter pub get
+   ```
+3. Jalankan aplikasi:
+   - Web: `flutter run -d chrome`
+   - Android/Mobile: `flutter run`
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📦 Deployment
+- **Web**: Hosting statis ke Cloudflare Pages / Vercel dari folder `build/web`.
+- **Android**: Build APK via GitHub Actions (cek tab Actions di repository GitHub Anda).
