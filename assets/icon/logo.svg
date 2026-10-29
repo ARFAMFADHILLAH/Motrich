@@ -1,6 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <rect width="512" height="512" rx="100" fill="#009688"/>
-  <path d="M140 320h232v40H140zM140 220h232v40H140z" fill="#ffffff" opacity="0.8"/>
-  <circle cx="256" cy="140" r="40" fill="#ffffff"/>
-  <path d="M256 180v40" stroke="#ffffff" stroke-width="20" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1976D2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="110" fill="url(#grad)"/>
+  <!-- Wallet Body -->
+  <rect x="96" y="160" width="320" height="220" rx="30" fill="#ffffff" opacity="0.15"/>
+  <rect x="96" y="140" width="320" height="220" rx="30" fill="#ffffff"/>
+  <!-- Wallet Fold / Clasp -->
+  <path d="M300 220h140v60H300z" fill="#1976D2" rx="12"/>
+  <circle cx="370" cy="250" r="12" fill="#FFFFFF"/>
+  <!-- Money / Chart symbols -->
+  <path d="M140 280l50-50 40 30 70-70" stroke="#1976D2" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>
