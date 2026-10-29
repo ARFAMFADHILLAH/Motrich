@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Clean & Generate Android
+        run: flutter create . --org com.motrich.app --project-name motrich
+
       - name: Build APK (Debug)
         run: flutter build apk --debug
 
