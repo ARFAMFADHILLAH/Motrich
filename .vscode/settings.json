@@ -1,0 +1,18 @@
+{
+  "dart.analyzerInstrumentation": false,
+  "dart.previewLsp": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "files.watcherExclude": {
+    "**/.dart_tool/**": true,
+    "**/build/**": true,
+    "**/.git/**": true,
+    "**/.gradle/**": true
+  },
+  "search.exclude": {
+    "**/.dart_tool": true,
+    "**/build": true,
+    "**/.git": true
+  }
+}
