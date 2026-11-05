@@ -27,22 +27,21 @@ jobs:
       
       # Accept Android licenses (non-interactive)
       - name: Accept Android Licenses
-        run: |
-          yes | flutter doctor --android-licenses
+        run: yes | flutter doctor --android-licenses
       
       # Ensure gradle wrapper executable
-      - name: Setup Gradle
+      - name: Setup Gradle Wrapper
         run: chmod +x android/gradlew
       
       - run: flutter pub get
       
-      # Build APK langsung via gradle
+      # Build Release APK
       - name: Build Release APK
         run: |
           cd android
           ./gradlew assembleRelease --no-configuration-cache
       
-      # Upload artifact dengan path yang BENAR
+      # Upload artifact
       - uses: actions/upload-artifact@v4
         with:
           name: motrich-apk
