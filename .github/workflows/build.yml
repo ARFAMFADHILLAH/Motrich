@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       
@@ -25,18 +25,25 @@ jobs:
           channel: 'stable'
           cache: true
       
-      # Accept Android licenses
-      - run: yes | sdkmanager --licenses
+      # Accept Android licenses via flutter (lebih reliable di CI)
+      - name: Accept Android Licenses
+        run: flutter doctor --android-licenses
+      
+      # Ensure gradle wrapper executable
+      - name: Setup Gradle
+        run: chmod +x android/gradlew
       
       - run: flutter pub get
       
-      # Build directly with gradle (skip flutter build wrapper)
-      - run: |
+      # Build APK langsung via gradle
+      - name: Build Release APK
+        run: |
           cd android
           ./gradlew assembleRelease --no-configuration-cache
       
+      # Upload artifact dengan path yang BENAR
       - uses: actions/upload-artifact@v4
         with:
           name: motrich-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: android/build/app/outputs/flutter-apk/app-release.apk
           retention-days: 7
