@@ -25,9 +25,10 @@ jobs:
           channel: 'stable'
           cache: true
       
-      # Accept Android licenses via flutter (lebih reliable di CI)
+      # Accept Android licenses (non-interactive)
       - name: Accept Android Licenses
-        run: flutter doctor --android-licenses
+        run: |
+          yes | flutter doctor --android-licenses
       
       # Ensure gradle wrapper executable
       - name: Setup Gradle
