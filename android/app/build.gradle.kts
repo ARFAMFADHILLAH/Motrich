@@ -37,7 +37,8 @@ android {
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
-            // Unsigned release build for CI artifact
+            // Use debug signing config so the APK is signed and directly installable on devices
+            signingConfig = signingConfigs.getByName("debug")
             
             // Disable lint checks that cause build failures in third-party plugins
             lint {
