@@ -242,4 +242,4 @@ SOFTWARE.
 **Motrich Manager** - Aplikasi keuangan pribadi modern, ringan, dan aman.
 
 > Dibangun dengan ❤️ menggunakan **Flutter** + **Supabase**  
-> © 2025 Motrich Manager - All Rights Reserved
+> © 2026 Motrich Manager - All Rights Reserved
