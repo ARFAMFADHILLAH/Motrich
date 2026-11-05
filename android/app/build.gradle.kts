@@ -4,6 +4,16 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+configurations.all {
+    resolutionStrategy {
+        eachDependency {
+            if (requested.group == "org.codehaus.groovy") {
+                useVersion("3.0.21")
+            }
+        }
+    }
+}
+
 android {
     namespace = "com.motrich.app.motrich"
     compileSdk = flutter.compileSdkVersion
