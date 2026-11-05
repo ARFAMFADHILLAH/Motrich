@@ -834,7 +834,7 @@ class HomeDashboardTab extends StatelessWidget {
               TextField(controller: balanceController, keyboardType: TextInputType.number, decoration: const InputDecoration(labelText: 'Saldo Awal (Rp)', border: OutlineInputBorder())),
               const SizedBox(height: 12),
               DropdownButtonFormField<String>(
-                initialValue: type,
+                value: type,
                 items: ['Cash', 'Bank', 'E-Wallet', 'Investasi'].map((t) => DropdownMenuItem(value: t, child: Text(t))).toList(),
                 onChanged: (val) => setModalState(() => type = val!),
                 decoration: const InputDecoration(labelText: 'Tipe', border: OutlineInputBorder()),
@@ -940,14 +940,14 @@ class HomeDashboardTab extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               DropdownButtonFormField<String>(
-                initialValue: category,
+                value: category,
                 items: categories.map((c) => DropdownMenuItem(value: c, child: Text(c))).toList(),
                 onChanged: (val) => setModalState(() => category = val!),
                 decoration: const InputDecoration(labelText: 'Kategori', border: OutlineInputBorder()),
               ),
               const SizedBox(height: 12),
               DropdownButtonFormField<String>(
-                initialValue: selectedWalletId,
+                value: selectedWalletId,
                 items: wallets.map((w) => DropdownMenuItem(value: w.id, child: Text('${w.name} (${w.type})'))).toList(),
                 onChanged: (val) => setModalState(() => selectedWalletId = val!),
                 decoration: const InputDecoration(labelText: 'Sumber Dompet', border: OutlineInputBorder()),
@@ -1033,7 +1033,7 @@ class HomeDashboardTab extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(colors: [Colors.blue.shade900, Colors.blue.shade600]),
               borderRadius: BorderRadius.circular(20),
-              boxShadow: [BoxShadow(color: Colors.blue.withValues(alpha: 0.3), blurRadius: 10, offset: const Offset(0, 4))],
+              boxShadow: [BoxShadow(color: Colors.blue.withOpacity(0.3), blurRadius: 10, offset: const Offset(0, 4))],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -1142,7 +1142,7 @@ class HomeDashboardTab extends StatelessWidget {
                         width: 160,
                         margin: const EdgeInsets.only(right: 12),
                         padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(color: Theme.of(context).cardColor, borderRadius: BorderRadius.circular(16), border: Border.all(color: Colors.blue.withValues(alpha: 0.3))),
+                        decoration: BoxDecoration(color: Theme.of(context).cardColor, borderRadius: BorderRadius.circular(16), border: Border.all(color: Colors.blue.withOpacity(0.3))),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -1263,7 +1263,7 @@ class _ReportTabState extends State<ReportTab> {
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 16),
             padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(color: Theme.of(context).cardColor, borderRadius: BorderRadius.circular(16), border: Border.all(color: Colors.blue.withValues(alpha: 0.3))),
+            decoration: BoxDecoration(color: Theme.of(context).cardColor, borderRadius: BorderRadius.circular(16), border: Border.all(color: Colors.blue.withOpacity(0.3))),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -1907,7 +1907,7 @@ class ProfileTab extends StatelessWidget {
           children: [
             Container(
               padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(color: color.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(12)),
+              decoration: BoxDecoration(color: color.withOpacity(0.15), borderRadius: BorderRadius.circular(12)),
               child: Icon(icon, color: color, size: 28),
             ),
             const SizedBox(height: 10),
